@@ -1,0 +1,23 @@
+#11.8 Lab in Zybooks
+#This creates a program to guess random numbers.
+import random # TODO: Import the random module
+def number_guess(num):
+    number_guess = random.randint(1, 100)  # TODO: Get a random number between 1-100
+    # TODO: Read numbers and compare to random number
+    if num < number_guess:
+        print( str(num), "is too low. Random number was",  str(number_guess) + ".")
+    elif num > number_guess:
+        print( str(num), "is too high. Random number was", str(number_guess ) + ".")
+    else:
+        print(number_guess, "is correct!")
+   
+if __name__ == "__main__":
+    # Use the seed 900 to get the same pseudo random numbers every time
+    random.seed(900)
+    
+    # Convert the string tokens into integers
+    user_input = input()
+    tokens = user_input.split()
+    for token in tokens:
+        num = int(token)
+        number_guess(num)
